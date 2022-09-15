@@ -1,0 +1,24 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "D:\\Sources\\pnpm-monorepo"
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: create-father",
+      "code": "ENOENT",
+      "stack": "Error: not found: create-father\n    at getNotFoundError (C:\\snapshot\\dist\\pnpm.cjs)\n    at Function.whichSync [as sync] (C:\\snapshot\\dist\\pnpm.cjs)\n    at getCommandAbsolutePathSync (C:\\snapshot\\dist\\pnpm.cjs)\n    at default_1 (C:\\snapshot\\dist\\pnpm.cjs)\n    at C:\\snapshot\\dist\\pnpm.cjs"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "D:\\Sources\\pnpm-monorepo",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: create-father",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: create-father\n    at getNotFoundError (C:\\snapshot\\dist\\pnpm.cjs)\n    at Function.whichSync [as sync] (C:\\snapshot\\dist\\pnpm.cjs)\n    at getCommandAbsolutePathSync (C:\\snapshot\\dist\\pnpm.cjs)\n    at default_1 (C:\\snapshot\\dist\\pnpm.cjs)\n    at C:\\snapshot\\dist\\pnpm.cjs"
+    }
+  }
+}
