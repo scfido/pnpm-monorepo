@@ -37,15 +37,15 @@ pnpm start
 # 开发
 
 
-## 添加包
+## 创建新包
 
-在这个模板中新添加一个包，操作流程如下，已创建`liba`为例：
+在这个模板中新添加一个包，操作流程如下，以创建`liba`为例：
 
 ```pwsh
 cd .\packages\
 mkdir liba
 cd liba
-npx create-father ./ 
+pnpm dlx create-father ./ 
 
 # 根据提示选择或输入你的信息。
 # √ Pick target platform(s) » Browser
@@ -116,10 +116,11 @@ pnpm build
 在`.\packages\docs`包中，添加`liba`的应用。
 
 ```json
-// .\packages\docs\package.json
+ // .\packages\docs\package.json
+
  "dependencies": {
     // 添加liba的依赖，注意版本号的写法。
-    "liba": "workspace:"
+    "liba": "workspace:^1.0.0"
     // ... 其它依赖
  }
 ```
@@ -185,9 +186,79 @@ pnpm docs:build --filter docs
 dotnet tool install --global dotnet-serve
 
 # 启动网站
-cd packages\docs\docs-dist
+cd c
 dotnet serve -o
 ```
 
 ## 发布组件
 
+发布组件非常简单，和npm的操作流程一致。在根目录下执行`pnpm publish`即可。通过[npmjs.org](https://npmjs.org)用户注册等一系列操作发布成功。完成后发现并不是我们要的结果，这样是把整个项目作为单个包发布出去了。而我们想要的是发布这三个包。
+
+- @pnpm-monorepo/liba
+- @pnpm-monorepo/libb
+- @pnpm-monorepo/libc
+
+其实也非常简单，使用`filter`参数过滤项目，或者分别到各自的目录下去发布就可以了。
+
+```pwsh
+# 使用指定项目名称的方式
+pnpm publish --filter liba
+pnpm publish --filter libb
+pnpm publish --filter libc
+
+# 使用通配符过滤的方式，注意windows下不要单引号。
+pnpm publish --filter 'lib*'
+
+# 进入到项目目录下发布的方式
+cd  .\packages\liba
+pnpm publish
+
+cd ..\libb
+pnpm publish
+
+cd ..\libc
+pnpm publish
+```
+
+## 统一包版本
+
+如果希望发布的所有包版本统一，现在的方式手动修改，目前`pnpm`并没有提供支持。
+
+不过有个参考脚本你可以试一试。
+
+- [前端工程化pnpm 管理workspace 统一版本号](https://blog.csdn.net/weixin_44872995/article/details/123416548)
+
+# 引用包
+
+包开发完成后就是给其它项目使用了，按上面的步骤发布到`npm`仓库后，按常规操作用名称引用即可。
+
+但是在开发过程中要引用本地包怎么操作呢？分仓库内和仓库外两种引用情况。
+
+## 仓库内
+
+在同一仓库内引用，比如`docs`项目引用`liba`。只需要在`docs`项目中执行添加包命令，并加上`-w``--workspace`参数，表面是引用workspace中的包。
+```pwsh
+# 中项目根目录操作需要带过滤条件
+pnpm add liba -w --filter docs
+
+# 进入包的目录可以直接添加
+cd .\packages\docs
+pnpm add liba -w
+```
+
+## 仓库外
+
+开发时其它仓库需要引用本项目的包时，可使用pnpm的`link`命令。
+
+1. 在被引用的仓库执行
+  ```pwsh
+  # 例如liba是要被引用的库，将liba注册到全局仓库
+  cd .\packages\liba
+  pnpm link . --global
+  ```
+2. 在引用的仓库执行
+  ```pwsh
+  # 从全局仓库连接 liba
+  pnpm link liba --global
+  ```
+  注意：连接后会在`package.json`的`dependencies`中添加`liba`。如果你的包从来没有发布过，以后执行install的时候会因为找不到这个包而失败。

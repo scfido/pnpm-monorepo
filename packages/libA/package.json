@@ -24,7 +24,6 @@
     "father": "^4.0.4"
   },
   "dependencies": {
-    "liba": "workspace:^0.0.1",
     "react": "^18.2.0"
   }
 }

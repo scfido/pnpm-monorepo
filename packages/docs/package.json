@@ -33,8 +33,9 @@
     ]
   },
   "dependencies": {
-    "liba": "workspace:",
-    "libc": "workspace:",
+    "liba": "workspace:*",
+    "libb": "workspace:^0.0.1",
+    "libc": "workspace:*",
     "react": "^18.2.0"
   },
   "devDependencies": {

@@ -17,13 +17,7 @@
     "dist",
     "compiled"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "devDependencies": {
     "father": "^4.0.4"
-  },
-  "dependencies": {
-    "liba": "workspace:^0.0.1"
   }
 }
