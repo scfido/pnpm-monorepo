@@ -1,7 +1,10 @@
 ---
 nav:
-  title: Components
   path: /components
+  title: 组件
+group:
+  path: /components
+  title: 组件
 ---
 
 ## Libiary C

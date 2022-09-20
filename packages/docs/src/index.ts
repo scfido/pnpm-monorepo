@@ -1,1 +1,1 @@
-export { default as LibC } from './LibC';
+export { default as LibC } from './libc';

@@ -7,18 +7,19 @@ group:
   title: 组件
 ---
 
-## Libiary A
+## Libiary B
 
-Button A:
+Button B:
 
 ```tsx
 import React from 'react';
-import {ButtonA} from "liba";
+import {Button} from "libb";
+import 'antd/dist/antd.css';
 
 export default () => {
   return(
     <div>
-    <ButtonA/>
+    <Button/>
     </div>
   )
 };

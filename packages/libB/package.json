@@ -18,6 +18,10 @@
     "compiled"
   ],
   "devDependencies": {
-    "father": "^4.0.4"
+    "father": "^4.0.4",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "antd": "^4.23.2"
   }
 }
