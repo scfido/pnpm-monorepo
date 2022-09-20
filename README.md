@@ -262,3 +262,24 @@ pnpm add liba -w
   pnpm link liba --global
   ```
   注意：连接后会在`package.json`的`dependencies`中添加`liba`。如果你的包从来没有发布过，以后执行install的时候会因为找不到这个包而失败。
+
+# 常见问题
+
+## ANTD组件没有加载CSS
+
+在docs项目中引用ANTD组件，并在文档中增加样式引用。
+
+```tsx
+import React from 'react';
+import {Button} from "libb";
+import 'antd/dist/antd.css';
+
+export default () => {
+  return(
+    <div>
+    <Button/>
+    </div>
+  )
+};
+
+```
