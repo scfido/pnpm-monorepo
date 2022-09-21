@@ -222,13 +222,11 @@ pnpm publish
 
 ## 统一包版本
 
-如果希望发布的所有包版本统一，现在的方式手动修改，目前`pnpm`并没有提供支持，可使用以下命令。
+如果希望发布的所有包版本统一，可使用以下命令。脚本会自动把`packages`目录下的项目设置为指定版本号，并且会自动添加添加git tag。
 
-npm version patch -m "build: release %s"
-
-另外有个参考脚本可以参考。
-
-- [前端工程化pnpm 管理workspace 统一版本号](https://blog.csdn.net/weixin_44872995/article/details/123416548)
+```pwsh
+./set-version.ps1 1.1.4
+```
 
 # 引用包
 
