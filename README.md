@@ -222,9 +222,11 @@ pnpm publish
 
 ## 统一包版本
 
-如果希望发布的所有包版本统一，现在的方式手动修改，目前`pnpm`并没有提供支持。
+如果希望发布的所有包版本统一，现在的方式手动修改，目前`pnpm`并没有提供支持，可使用以下命令。
 
-不过有个参考脚本你可以试一试。
+npm version patch -m "build: release %s"
+
+另外有个参考脚本可以参考。
 
 - [前端工程化pnpm 管理workspace 统一版本号](https://blog.csdn.net/weixin_44872995/article/details/123416548)
 
@@ -283,3 +285,15 @@ export default () => {
 };
 
 ```
+
+## 包修改以后不生效
+
+我发现包减少输出文件引用包的node_modules下仍然存在的情况，建议全部删除后重新安装。
+
+```powershell
+pnpm reinstall
+```
+
+## 报找不到引用包的文件
+
+`docs`项目生成报找不到引用包的文件，并且错误信息中的文件位置在`docs/src`目录下，这是因为引用包编译失败，`没有输出到docs的node_modules`中，因为docs在`tsconfig.josn`中重定义了`@/*:["src/*"]`，所以不要被编译错误中的文件位置误导了。

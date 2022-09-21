@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "pnpm run start --filter *",
-    "test": "pnpm run test --filter *",
+    "start": "pnpm --filter '*' run start",
+    "test": "pnpm --filter '*' run test ",
     "reinstall": "pnpm clean && pnpm install",
     "clean": "rm node_modules, packages/**/node_modules -Confirm"
   },

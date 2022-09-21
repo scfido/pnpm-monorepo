@@ -14,7 +14,7 @@ Button B:
 ```tsx
 import React from 'react';
 import {Button} from "libb";
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 
 export default () => {
   return(
@@ -22,6 +22,6 @@ export default () => {
     <Button/>
     </div>
   )
-};
+}; 
 
 ```

@@ -6,6 +6,7 @@
     "baseUrl": "./",
     "jsx": "react",
     "esModuleInterop": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "lib":["ES2015", "DOM"]
   }
 }
