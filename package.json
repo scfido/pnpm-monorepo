@@ -1,6 +1,6 @@
 {
   "name": "pnpm-monorepo-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "scripts": {
     "start": "pnpm --filter '*' run start",
@@ -14,8 +14,6 @@
   "devDependencies": {
     "typescript": "^4.8.3"
   },
-  "publishConfig": {
-  },
-  "dependencies": {
-  }
+  "publishConfig": {},
+  "dependencies": {}
 }
