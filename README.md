@@ -202,12 +202,12 @@ dotnet serve -o
 
 ```pwsh
 # 使用指定项目名称的方式
-pnpm publish --filter liba
-pnpm publish --filter libb
-pnpm publish --filter libc
+pnpm --filter liba publish 
+pnpm --filter libb publish 
+pnpm --filter libc publish
 
 # 使用通配符过滤的方式，注意windows下不要单引号。
-pnpm publish --filter 'lib*'
+pnpm --filter 'lib*' publish
 
 # 进入到项目目录下发布的方式
 cd  .\packages\liba
