@@ -220,6 +220,8 @@ cd ..\libc
 pnpm publish
 ```
 
+或者使用`script`目录下的`publish.ps1`脚本。
+
 ## 统一包版本
 
 如果希望发布的所有包版本统一，可使用以下命令。脚本会自动把`packages`目录下的项目设置为指定版本号，并且会自动添加添加git tag。

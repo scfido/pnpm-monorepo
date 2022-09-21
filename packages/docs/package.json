@@ -35,7 +35,7 @@
   "dependencies": {
     "antd": "^4.23.2",
     "liba": "workspace:*",
-    "libb": "workspace:^0.0.1",
+    "libb": "workspace:*",
     "libc": "workspace:*",
     "react": "^18.2.0"
   },

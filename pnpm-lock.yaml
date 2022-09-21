@@ -16,7 +16,7 @@ importers:
       father-build: ^1.19.1
       gh-pages: ^3.0.0
       liba: workspace:*
-      libb: workspace:^0.0.1
+      libb: workspace:*
       libc: workspace:*
       lint-staged: ^10.0.7
       prettier: ^1.19.1
@@ -48,12 +48,14 @@ importers:
 
   packages/libB:
     specifiers:
+      '@types/react': 18.0.20
       antd: ^4.23.2
       father: ^4.0.4
       react: ^18.2.0
     dependencies:
       antd: 4.23.2_react@18.2.0
     devDependencies:
+      '@types/react': 18.0.20
       father: 4.0.5
       react: 18.2.0
 
@@ -2846,7 +2848,7 @@ packages:
     resolution: {integrity: sha512-db1mx37a1EJDf1XeX8jJN7R3PZABmJQXR8r28yUjVMFSjkmnQo6X6pOEEmNl+Tp2gYQOGPdYbFIipBtdElZ3Yg==}
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 16.14.32
+      '@types/react': 18.0.20
       '@types/react-router': 5.1.19
     dev: true
 
